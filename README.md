@@ -7,6 +7,9 @@ Astro-Saurav is a Tkinter-based desktop application that displays a calendar for
 
 ![Screenshot 2024-07-25 101646](https://github.com/user-attachments/assets/0a7c7525-1a26-4a2e-893c-165f25abbddc)
 
+![Screenshot 2024-07-25 102229](https://github.com/user-attachments/assets/238a0a7b-b8c5-4775-9511-d2b46966276d)
+
+
 ## Features
 
 - **Dynamic Calendar Display**: Shows a calendar for any given year.
