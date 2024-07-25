@@ -5,6 +5,8 @@
 
 Astro-Saurav is a Tkinter-based desktop application that displays a calendar for a given year. The application dynamically generates a calendar view, with each month's background color changing automatically every 3 seconds. The main window allows users to input a year and view the calendar for that year in a new window.
 
+![Screenshot 2024-07-25 101646](https://github.com/user-attachments/assets/0a7c7525-1a26-4a2e-893c-165f25abbddc)
+
 ## Features
 
 - **Dynamic Calendar Display**: Shows a calendar for any given year.
@@ -24,5 +26,6 @@ Astro-Saurav is a Tkinter-based desktop application that displays a calendar for
 
    ```bash
    https://github.com/Astro-Saurav/Python_project.git
-   ![image](https://github.com/user-attachments/assets/8c3d7c37-b317-4df8-9fb9-5f0e54af2c28)
+
+
 
