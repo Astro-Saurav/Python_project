@@ -1,1 +1,108 @@
+from tkinter import *
+import calendar
+import random
 
+# Function to show calendar of the given year dynamically
+def showCalendar():
+    try:
+        year = int(year_field.get())
+        show_output_window(year)
+        error_label.config(text="")  # Clear any previous error messages
+    except ValueError:
+        error_label.config(text="Please enter a valid year", fg="red")
+
+# Function to validate year input
+def validateYear(new_value):
+    if new_value.isdigit() or new_value == "":
+        error_label.config(text="")  # Clear error message if input is valid
+        return True
+    else:
+        error_label.config(text="Invalid input! Please enter a valid year", fg="red")
+        return False
+
+# Function to show the output window
+def show_output_window(year):
+    def refresh_colors():
+        random.shuffle(colors)
+        random.shuffle(year_colors)
+        for i, (month_frame, month_label, cal_label) in enumerate(month_frames):
+            color = colors[i % len(colors)]
+            month_frame.config(bg=color)
+            month_label.config(bg=color)
+            cal_label.config(bg='white')  # Ensure calendar text stays readable
+
+        year_label.config(bg=random.choice(year_colors))  # Change the color of the year label
+
+        # Schedule the next color change
+        output_window.after(3000, refresh_colors)  # 3000 ms = 3 seconds
+
+    output_window = Toplevel(new)
+    output_window.config(background='white')
+    output_window.title(f"Astro-Saurav")
+    output_window.geometry("725x675")
+    output_window.resizable(False, False)  # Fix the window size
+    
+    # Colors for the year label
+    year_colors = ['#FFD700', '#FF6347', '#4682B4', '#32CD32', '#FF1493']
+    
+    # Create a Label for the year
+    year_label = Label(output_window, text=f"{year}", bg='white', font=("Arial", 24, "bold"))
+    year_label.pack(pady=20)
+
+    cal_frame = Frame(output_window, bg='white')
+    cal_frame.pack(expand=True, fill=BOTH)
+    
+    months = [calendar.month_name[i] for i in range(1, 13)]
+    colors = ['#00BFFF', '#FF69B4', '#3CB371', '#FFD700', '#9370DB', '#4682B4',
+              '#FFA07A', '#DAA520', '#FF4500', '#FF1493', '#87CEFA', '#32CD32']
+    
+    month_frames = []
+
+    for i, month in enumerate(months):
+        month_frame = Frame(cal_frame, bd=2, relief=SOLID, bg=colors[i % len(colors)])
+        month_frame.grid(row=i//4, column=i%4, padx=10, pady=10)
+        
+        month_label = Label(month_frame, text=month, bg=colors[i % len(colors)], font=("Arial", 14, "bold"))
+        month_label.pack(pady=5)
+
+        cal = calendar.monthcalendar(year, i+1)
+        cal_text = "Mo Tu We Th Fr Sa Su\n" + "\n".join([" ".join(f"{day:2}" if day != 0 else "  " for day in week) for week in cal])
+        
+        cal_label = Label(month_frame, text=cal_text, bg='white', font=("Consolas", 10), justify=LEFT)
+        cal_label.pack(padx=5, pady=5)
+
+        month_frames.append((month_frame, month_label, cal_label))
+
+    exit_button = Button(output_window, text='Close', fg='Black', bg='Red', command=output_window.destroy)
+    exit_button.pack(pady=10)
+
+    # Start the automatic color change
+    refresh_colors()
+
+# Main input window setup
+if __name__ == '__main__':
+    new = Tk()
+    new.config(background='grey')
+    new.title("Astro-Saurav")
+    new.geometry("300x200")
+    new.resizable(False, False)  # Fix the window size
+    
+    header_label = Label(new, text="Calendar", bg='grey', font=("times", 28, "bold"))
+    year_label = Label(new, text="Enter year", bg='dark grey')
+    
+    validation_cmd = new.register(validateYear)
+    
+    year_field = Entry(new, validate="key", validatecommand=(validation_cmd, '%P'))
+    show_button = Button(new, text='Show Calendar', fg='Black', bg='Blue', command=showCalendar)
+    error_label = Label(new, text="", fg="red", bg='grey')
+    
+    header_label.grid(row=0, column=0, columnspan=2, pady=10)
+    year_label.grid(row=1, column=0, padx=10, pady=10, sticky="e")
+    year_field.grid(row=1, column=1, padx=10, pady=10, sticky="w")
+    show_button.grid(row=2, column=0, columnspan=2, pady=10)
+    error_label.grid(row=3, column=0, columnspan=2, pady=10)
+    
+    new.grid_columnconfigure(0, weight=1)
+    new.grid_columnconfigure(1, weight=1)
+
+    new.mainloop()
