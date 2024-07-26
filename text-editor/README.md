@@ -22,7 +22,7 @@ pip install cryptography
 ```
 1. **Clone the Repository**
 ```bash
-git clone https://github.com/Astro-Saurav/Python_project/tree/5b231d4254b2d0a96c5b840432e3082cb0bd2c0e/text-editor
+git clone  https://github.com/Astro-Saurav/Python_project/tree/main/text-editor
 cd text-editor
 ```
 Run the Application
