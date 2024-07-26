@@ -29,6 +29,5 @@ Astro-Saurav is a Tkinter-based desktop application that displays a calendar for
 
    ```bash
    https://github.com/Astro-Saurav/Python_project.git
-
-
+   ```
 
