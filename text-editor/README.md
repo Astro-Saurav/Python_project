@@ -53,9 +53,9 @@ You can encrypt files with a password. When saving a file with a password, the c
 ## Contributing
 Contributions are welcome! Please open issues or submit pull requests if you have suggestions or improvements.
 
-License
+## License
 This project is licensed under the MIT [License](https://github.com/Astro-Saurav/Python_project/blob/bfa6151f1ee8ad34db80a5ef62855c0aa9c8f519/text-editor/License). See the LICENSE file for details.
 
-Contact
+## Contact
 For questions or support, please open an issue on the repository or contact me via [email](0501saurav@gmail.com).
 
