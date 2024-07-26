@@ -1,22 +1,23 @@
-Python Text Editor
+#Python Text Editor
+
 A feature-rich Python-based text editor developed with Tkinter. This editor provides essential text editing functionalities, customizable themes, and file encryption.
 
-Features
-Basic Text Editing: Includes Cut, Copy, Paste, Undo, Redo, and more.
-File Encryption: Password-protect your files.
-Theme Customization: Change background color, text color, cursor color, and opacity.
-Word Wrap: Toggle word wrap mode on or off.
-Zoom: Adjust text size with zoom in and zoom out.
-Find and Replace: Search for and replace text within the document.
-Date/Time Insertion: Easily insert the current date and time into your document.
-Installation
+#Features
+
+- **Basic Text Editing: Includes Cut, Copy, Paste, Undo, Redo, and more.
+- **File Encryption: Password-protect your files.
+- **Theme Customization: Change background color, text color, cursor color, and opacity.
+- **Word Wrap: Toggle word wrap mode on or off.
+- **Zoom: Adjust text size with zoom in and zoom out.
+- **Find and Replace: Search for and replace text within the document.
+- **Date/Time Insertion: Easily insert the current date and time into your document.
+
+#Installation
 Ensure you have Python installed on your system. This project requires the cryptography library, which you can install via pip:
 
-bash
-Copy code
+```bash 
 pip install cryptography
-Usage
-Clone the Repository
+
 
 bash
 Copy code
