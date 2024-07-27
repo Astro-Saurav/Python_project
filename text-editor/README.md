@@ -15,6 +15,8 @@ A feature-rich Python-based text editor developed with Tkinter. This editor prov
 -  Date/Time Insertion: Easily insert the current date and time into your document.
 
 ## Installation
+![Download exe](https://github.com/Astro-Saurav/Python_project/releases/tag/v0.1)
+
 Ensure you have Python installed on your system. This project requires the cryptography library, which you can install via pip:
 
 ```bash 
@@ -58,4 +60,3 @@ This project is licensed under the MIT [License](https://github.com/Astro-Saurav
 
 ## Contact
 For questions or support, please open an issue on the repository or contact me via [email](0501saurav@gmail.com).
-
